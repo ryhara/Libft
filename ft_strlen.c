@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 08:01:35 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/19 08:01:35 by ryhara           ###   ########.fr       */
+/*   Created: 2023/05/19 08:04:13 by ryhara            #+#    #+#             */
+/*   Updated: 2023/05/19 08:04:13 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
+size_t	ft_strlen(const char *s)
+{
+	size_t	len;
 
+	len = 0;
+	while (*s)
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
 
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void 	ft_putnbr_fd(int n, int fd);
+// #include<stdio.h>
+// int	main(void)
+// {
+// 	printf("%ld\n",ft_strlen(""));
+// 	printf("%ld\n",ft_strlen("12345"));
+// }

@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/19 08:01:35 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/19 08:01:35 by ryhara           ###   ########.fr       */
+/*   Created: 2023/05/19 08:18:59 by ryhara            #+#    #+#             */
+/*   Updated: 2023/05/19 08:18:59 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n < 0)
+	{
+		ft_putchar_fd('-',fd);
+		ft_putnbr_fd(n / -10,fd);
+		ft_putchar_fd(n % 10 * -1 + '0',fd);
+		return ;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10,fd);
+	ft_putchar_fd(n % 10 + '0',fd);
+}
 
+int	main(void)
+{
+	int	fd;
 
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void 	ft_putnbr_fd(int n, int fd);
+	fd = 1;
+	ft_putnbr_fd(INT_MAX,1);
+	ft_putnbr_fd(INT_MIN,1);
+	ft_putnbr_fd(-42,1);
+	ft_putnbr_fd(0,1);
+}
