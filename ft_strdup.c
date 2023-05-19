@@ -33,13 +33,13 @@ char	*ft_strdup(const char *s)
 	return (head);
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char *s1 = "abcde\n";
-	char *s2 = ft_strdup(s1);
-	printf("s1 %p\n",s1);
-	printf("%s\n",s1);
-	printf("s2 %p\n",s2);
-	printf("%s\n",s2);
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char *s1 = "abcde\n";
+// 	char *s2 = ft_strdup(s1);
+// 	printf("s1 %p\n",s1);
+// 	printf("%s\n",s1);
+// 	printf("s2 %p\n",s2);
+// 	printf("%s\n",s2);
+// }
