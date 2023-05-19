@@ -18,21 +18,23 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		ft_putchar_fd('-',fd);
 		ft_putnbr_fd(n / -10,fd);
-		ft_putchar_fd(n % 10 * -1 + '0',fd);
-		return ;
+		n = n % 10 * -1;
 	}
 	if (n >= 10)
 		ft_putnbr_fd(n / 10,fd);
 	ft_putchar_fd(n % 10 + '0',fd);
 }
 
-int	main(void)
-{
-	int	fd;
+// int	main(void)
+// {
+// 	int	fd;
 
-	fd = 1;
-	ft_putnbr_fd(INT_MAX,1);
-	ft_putnbr_fd(INT_MIN,1);
-	ft_putnbr_fd(-42,1);
-	ft_putnbr_fd(0,1);
-}
+// 	fd = 1;
+// 	ft_putnbr_fd(INT_MAX,1);
+// 	ft_putchar_fd('\n',1);
+// 	ft_putnbr_fd(INT_MIN,1);
+// 	ft_putchar_fd('\n',1);
+// 	ft_putnbr_fd(-42,1);
+// 	ft_putchar_fd('\n',1);
+// 	ft_putnbr_fd(0,1);
+// }
