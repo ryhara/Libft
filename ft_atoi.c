@@ -16,14 +16,14 @@ int	check_overflow(long num, const char *nptr, int sign)
 {
 	if (sign == 1)
 	{
-		if ((num == 922337203685477580 && (*nptr - '0') > 7)
-			|| num >= 922337203685477581)
+		if ((num == (LONG_MAX / 10) && (*nptr - '0') > 7)
+			|| num >= (LONG_MAX / 10) + 1)
 			return (-1);
 	}
 	if (sign == -1)
 	{
-		if ((num == 922337203685477580 && (*nptr - '0') > 8)
-			|| num >= 922337203685477581)
+		if ((num == (LONG_MAX / 10) && (*nptr - '0') > 8)
+			|| num >= (LONG_MAX / 10) + 1)
 			return (0);
 	}
 	return (1);

@@ -17,7 +17,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*memory;
 
 	if (nmemb == 0 || size == 0)
-		ft_calloc(1, 1);
+		return (ft_calloc(1, 1));
 	else
 	{
 		memory = (void *)malloc(nmemb * size);
