@@ -18,6 +18,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return (ft_calloc(1, 1));
+	if (((size_t)SIZE_MAX / size) < nmemb)
+		return (NULL);
 	else
 	{
 		memory = (void *)malloc(nmemb * size);

@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:21:37 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/21 09:55:00 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/05/21 13:38:44 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	i = 0;
 	ans = (unsigned char *)s;
+	if (s == NULL)
+		return (NULL);
 	while (i < n)
 	{
-		if (*ans == c)
+		if (*ans == (unsigned char)c)
 			return (ans);
 		ans++;
 		i++;

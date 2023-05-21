@@ -14,13 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (c == '\0')
-		return ((char *)(s + ft_strlen(s)));
-	while (*s)
+	char	*ans;
+
+	ans = (char *)s;
+	if (s == NULL)
+		return (NULL);
+	if ((char)c == '\0')
+		return ((ans + ft_strlen(s)));
+	while (*ans)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (*ans == (char)c)
+			return (ans);
+		ans++;
 	}
 	return (NULL);
 }
@@ -30,7 +35,7 @@ char	*ft_strchr(const char *s, int c)
 // int main(void)
 // {
 // 	char *s1 = "abcdeab";
-// 	printf("%p\n", strchr(s1,'b'));
-// 	printf("%p\n", ft_strchr(s1,'b'));
+// 	printf("%p\n", strchr(s1,'\0'));
+// 	printf("%p\n", ft_strchr(s1,'\0'));
 // 	printf("%p\n", s1+1);
 // }

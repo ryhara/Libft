@@ -14,16 +14,20 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*tmp1;
+	unsigned char	*tmp2;
 
-	i = 0;
-	while (*s1 && *s2 && i < n)
+	tmp1 = (unsigned char *)s1;
+	tmp2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while ((*tmp1 || *tmp2) && n)
 	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-		i++;
+		if (*tmp1 != *tmp2)
+			return (*tmp1 - *tmp2);
+		tmp1++;
+		tmp2++;
+		n--;
 	}
 	return (0);
 }
@@ -32,7 +36,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 // #include<stdio.h>
 // int	main(void)
 // {
-// 	printf("%d\n",strncmp("aaaaa","aa-b",100));
-// 	printf("%d\n",ft_strncmp("aaaaa","aa-b",100));
+// 	// printf("%d\n",strncmp("aaaaa",0,100));
+// 	//printf("%d\n",ft_strncmp("aaaaa",0,100));
 
 // }

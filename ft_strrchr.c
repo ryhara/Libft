@@ -15,19 +15,21 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*pos;
+	char	*ans;
 
-	pos = NULL;
-	if (c == '\0')
-		return ((char *)(s + ft_strlen(s)));
-	while (*s)
-	{
-		if (*s == c)
-			pos = (char *)s;
-		s++;
-	}
-	if (pos == NULL)
+	pos = (char *)s;
+	ans = NULL;
+	if (s == NULL)
 		return (NULL);
-	return (pos);
+	if ((char)c == '\0')
+		return ((pos + ft_strlen(s)));
+	while (*pos)
+	{
+		if (*pos == (char)c)
+			ans = pos;
+		pos++;
+	}
+	return (ans);
 }
 
 // #include<stdio.h>
