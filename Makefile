@@ -6,7 +6,7 @@
 #    By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/21 10:12:09 by ryhara            #+#    #+#              #
-#    Updated: 2023/05/21 11:01:42 by ryhara           ###   ########.fr        #
+#    Updated: 2023/05/21 17:23:03 by ryhara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,11 @@ SRCS = ft_strlen.c \
 	ft_putchar_fd.c \
 	ft_putstr_fd.c \
 	ft_putendl_fd.c \
-	ft_putnbr_fd.c
+	ft_putnbr_fd.c \
+	ft_substr.c \
+	ft_strjoin.c \
+	ft_strtrim.c \
+	ft_split.c
 
 OBJS = $(SRCS:%.c=$(OBJDIR)%.o)
 OBJDIR = ./obj/
