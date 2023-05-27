@@ -6,15 +6,17 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:30:54 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/21 17:44:51 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/05/27 15:17:27 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	check_digit(int n)
+size_t	check_digit(int n)
 {
-	int	digit;
+	size_t	digit;
+
+	digit = 1;
 	if (n < 0)
 	{
 		n /= -10;
@@ -22,28 +24,42 @@ int	check_digit(int n)
 	}
 	else
 		n /= 10;
-	digit = 1;
 	while (n)
+	{
 		n /= 10;
+		digit++;
+	}
 	return (digit);
 }
 
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	digit;
-	int	i;
+	size_t	digit;
+	long	num;
 
-	i = 0;
+	num = n;
 	digit = check_digit(n);
-	if (n < 0)
 	str = (char *)malloc(sizeof(char) * (digit + 1));
+	if (str == NULL)
+		return (NULL);
+	str[digit + 1] = '\0';
+	if (n < 0)
+		num *= -1;
 	while (digit--)
 	{
-		while(i < digit)
-		{
-			str[i] = (n / 10) 
-		}
+		str[digit] = (num % 10) + '0';
+		num /= 10;
 	}
-
+	if (n < 0)
+		str[0] = '-';
+	return (str);
 }
+
+// #include<stdio.h>
+// int main(void)
+// {
+// 	char *s;
+// 	s = ft_itoa(INT_MIN);
+// 	printf("%s\n",s);
+// }
