@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:03:13 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/21 17:23:54 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/05/28 14:24:36 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,29 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char *ans;
-	char	*head;
-	char	*tail;
+	char	*ans;
+	char	*tmp_s1;
 	size_t	i;
-	size_t	count;
+	size_t	tail;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+	tmp_s1 = (char *)s1;
 	i = 0;
-	count = 0;
-	head = (char *)s1;
-	tail = (char *)s1 + ft_strlen(s1) - 1;
-	while (set[i])
-	{
-		if (ft_strchr(head, set[i]))
-		{
-			head++;
-			i = 0;
-		}
+	while (tmp_s1[i] != '\0' && ft_strchr(set, tmp_s1[i]))
 		i++;
-	}
-	while (set[i])
-	{
-		if (ft_strrchr(head, set[i]))
-		{
-			i = 0;
-			count++;
-		}
-		i++;
-	}
-	ans = ft_substr(head, 0, (ft_strlen(head) - count));
+	tail = ft_strlen(tmp_s1);
+	while (tail > i && ft_strchr(set, tmp_s1[tail - 1]))
+		tail--;
+	ans = (char *)malloc(sizeof(char) * (tail - i + 1));
+	if (!ans)
+		return (NULL);
+	ft_strlcpy(ans, &tmp_s1[i], (tail - i + 1));
 	return (ans);
 }
 
 // #include <stdio.h>
 // int	main(void)
 // {
-// 	printf("%s\n",ft_strtrim("hello world", "world"));
+// 	printf("%s\n",ft_strtrim("",""));
 // }
