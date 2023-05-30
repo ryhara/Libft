@@ -6,7 +6,7 @@
 #    By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/21 10:12:09 by ryhara            #+#    #+#              #
-#    Updated: 2023/05/21 17:23:03 by ryhara           ###   ########.fr        #
+#    Updated: 2023/05/30 23:45:35 by ryhara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,19 +43,28 @@ SRCS = ft_strlen.c \
 	ft_strtrim.c \
 	ft_split.c
 
+B_SRCS = ft_lstnew.c
 OBJS = $(SRCS:%.c=$(OBJDIR)%.o)
+B_OBJS = $(B_SRCS:%.c=$(OBJDIR)%.o)
 OBJDIR = ./obj/
-CC = CC
+CC = cc
 RM = rm -rf
+AR = ar rcs
 CFLAGS = -Wall -Wextra -Werror
 
 all : $(OBJDIR) $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	$(AR) $@ $^
 
 $(OBJDIR):
 	mkdir obj
+
+$(OBJDIR)%.o: %.c
+	$(CC) $(CFLAGS)  -o $@ -c $<
+
+bonus: $(OBJS) $(B_OBJS)
+	$(AR) $(NAME) $(OBJS) $(B_OBJS)
 
 clean :
 	$(RM) $(OBJDIR)
@@ -65,7 +74,4 @@ fclean : clean
 
 re : fclean all
 
-$(OBJDIR)%.o: %.c
-	$(CC) $(CFLAGS)  -o $@ -c $<
-
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re bonus

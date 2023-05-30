@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:42:10 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/30 22:24:32 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/05/30 22:51:36 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static void	free_all(char **array, size_t len)
 	free(array);
 }
 
-static char	**do_split(char **array, char *str, char c, size_t arr_len)
+static char	**do_split(char **array, char *str, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -78,7 +78,7 @@ char	**ft_split(char const *s, char c)
 	array = (char **)malloc(sizeof(char *) * (arr_len + 1));
 	if (!array)
 		return (NULL);
-	if (!do_split(array, str, c, arr_len))
+	if (!do_split(array, str, c))
 		return (NULL);
 	return (array);
 }

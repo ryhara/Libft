@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 14:49:59 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/28 14:47:56 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/05/30 22:51:15 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subs;
 	size_t	i;
-	size_t	s_len;
 
 	i = 0;
 	if (s == NULL || len == 0)
