@@ -20,6 +20,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (*little == '\0')
 		return ((char *)big);
+	if (big == NULL && little != NULL && len == 0)
+		return (NULL);
 	while (big[i] && i < len)
 	{
 		j = 0;
@@ -41,5 +43,6 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 // #include<string.h>
 // int	main(void)
 // {
-// 	printf("%s\n",ft_strnstr("aiueo","ue",4));
+// 	// printf("%s\n",ft_strnstr("aiueo","ue",0));
+// 	printf("%s\n",ft_strnstr("abbbcdefg", "bbc", 20));
 // }

@@ -6,7 +6,7 @@
 #    By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/21 10:12:09 by ryhara            #+#    #+#              #
-#    Updated: 2023/05/30 23:45:35 by ryhara           ###   ########.fr        #
+#    Updated: 2023/06/05 22:50:27 by ryhara           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,9 @@ SRCS = ft_strlen.c \
 	ft_strtrim.c \
 	ft_split.c
 
-B_SRCS = ft_lstnew.c
+B_SRCS = $(SRCS) ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c ft_lstdelone.c ft_lstiter.c ft_lstclear.c ft_lstmap.c
+
 OBJS = $(SRCS:%.c=$(OBJDIR)%.o)
 B_OBJS = $(B_SRCS:%.c=$(OBJDIR)%.o)
 OBJDIR = ./obj/
@@ -63,8 +65,8 @@ $(OBJDIR):
 $(OBJDIR)%.o: %.c
 	$(CC) $(CFLAGS)  -o $@ -c $<
 
-bonus: $(OBJS) $(B_OBJS)
-	$(AR) $(NAME) $(OBJS) $(B_OBJS)
+bonus:  $(B_OBJS)
+	$(AR) $(NAME) $(B_OBJS)
 
 clean :
 	$(RM) $(OBJDIR)
