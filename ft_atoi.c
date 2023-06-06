@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	check_overflow(long num, const char *nptr, int sign)
+static	int	check_overflow(long num, const char *nptr, int sign)
 {
 	if (sign == 1)
 	{
@@ -29,7 +29,7 @@ int	check_overflow(long num, const char *nptr, int sign)
 	return (1);
 }
 
-int	ft_atoi(const char *nptr)
+static	long	ft_strtol(const char *nptr)
 {
 	long	num;
 	int		sign;
@@ -48,12 +48,19 @@ int	ft_atoi(const char *nptr)
 	while (*nptr >= '0' && *nptr <= '9')
 	{
 		flag = check_overflow(num, nptr, sign);
-		if (flag != 1)
-			return (flag);
+		if (flag == -1)
+			return (LONG_MAX);
+		else if (flag == 0)
+			return (LONG_MIN);
 		num = num * 10 + (*nptr - '0');
 		nptr++;
 	}
 	return (num * sign);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	return ((int)ft_strtol(nptr));
 }
 
 // #include <stdlib.h>
@@ -61,9 +68,9 @@ int	ft_atoi(const char *nptr)
 // int main(void)
 // {
 // 	//LONG_MAX 9223372036854775807
-// 	printf("%d\n",atoi(" \n 	 9223372036854775808."));
+// 	printf("%d\n",atoi(" \n 	 -9223372036854775807."));
 // 	printf("%d\n",atoi("-2147483648"));
 // 	printf("ft_atoi\n");
-// 	printf("%d\n",ft_atoi("  \n	 9223372036854775808."));
+// 	printf("%d\n",ft_atoi("  \n	 -9223372036854775807."));
 // 	printf("%d\n",ft_atoi("-2147483648"));
 // }
