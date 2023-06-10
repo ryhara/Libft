@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 14:38:10 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/28 14:25:37 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/10 18:43:40 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ans = (char *)malloc(sizeof(char) * len);
 	if (!ans)
 		return (NULL);
-	ft_strlcat(ans, s1, sizeof(ans));
-	ft_strlcat(ans, s2, sizeof(ans));
+	*ans = '\0';
+	ft_strlcat(ans, s1, ft_strlen(s1) + 1);
+	ft_strlcat(ans, s2, len);
 	return (ans);
 }
 
