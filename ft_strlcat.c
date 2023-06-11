@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:04:12 by ryhara            #+#    #+#             */
-/*   Updated: 2023/06/10 11:01:20 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 10:05:53 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
-	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if (dst == NULL && dstsize == 0)
+		return (src_len);
+	dst_len = ft_strlen(dst);
 	if (dstsize <= dst_len)
 		return (dstsize + src_len);
 	while (i < dstsize - dst_len - 1)
