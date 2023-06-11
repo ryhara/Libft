@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:42:10 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/31 10:07:34 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 09:48:16 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static size_t	word_count(char *str, char c)
 	{
 		while (*str == c)
 			str++;
+		if (*str == '\0')
+			break ;
 		while (*str && *str != c)
 			str++;
 		count++;
@@ -41,13 +43,13 @@ static void	free_all(char **array, size_t len)
 	free(array);
 }
 
-static char	**do_split(char **array, char *str, char c)
+static char	**do_split(char **array, char *str, char c, size_t arr_len)
 {
 	size_t	i;
 	size_t	j;
 
 	j = 0;
-	while (*str)
+	while (*str && arr_len--)
 	{
 		while (*str == c)
 			str++;
@@ -78,7 +80,7 @@ char	**ft_split(char const *s, char c)
 	array = (char **)malloc(sizeof(char *) * (arr_len + 1));
 	if (!array)
 		return (NULL);
-	if (!do_split(array, str, c))
+	if (!do_split(array, str, c, arr_len))
 		return (NULL);
 	return (array);
 }
@@ -98,7 +100,8 @@ char	**ft_split(char const *s, char c)
 // 	i = 0;
 // 	count = (word_count(str, c) + 1);
 // 	printf("count : %d\n", count);
-// 	ans = ft_split(str, c);
+// 	// ans = ft_split(str, c);
+// 	ans = ft_split(",,,hello,,,world,,,42,,,tokyo,,,,", ',');
 // 	printf("%s\n",str);
 // 	while (i < count)
 // 	{

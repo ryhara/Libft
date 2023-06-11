@@ -20,8 +20,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
-	last = ft_lstlast(*lst);
-	last -> next = new;
+	else
+	{
+		last = ft_lstlast(*lst);
+		last -> next = new;
+	}
 }
 
 // #include <stdio.h>

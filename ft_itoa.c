@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:30:54 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/27 15:17:27 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 09:38:51 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,13 @@ char	*ft_itoa(int n)
 
 	num = n;
 	digit = check_digit(n);
-	str = (char *)malloc(sizeof(char) * (digit + 1));
+	if (n >= 0)
+		str = (char *)malloc(sizeof(char) * (digit + 1));
+	else
+		str = (char *)malloc(sizeof(char) * (digit + 1));
 	if (str == NULL)
 		return (NULL);
-	str[digit + 1] = '\0';
+	str[digit] = '\0';
 	if (n < 0)
 		num *= -1;
 	while (digit--)
@@ -60,6 +63,6 @@ char	*ft_itoa(int n)
 // int main(void)
 // {
 // 	char *s;
-// 	s = ft_itoa(INT_MIN);
+// 	s = ft_itoa(-1);
 // 	printf("%s\n",s);
 // }
