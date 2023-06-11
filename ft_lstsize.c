@@ -26,15 +26,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	t_list *lst = ft_lstnew("0");
-// 	ft_lstadd_front(&lst, ft_lstnew("1"));
-// 	ft_lstadd_front(&lst, ft_lstnew("2"));
-// 	// t_list *lst;
-// 	// lst = NULL;
-// 	printf("%d\n",ft_lstsize(lst));
-// }

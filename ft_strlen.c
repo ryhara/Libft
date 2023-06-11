@@ -24,10 +24,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (len);
 }
-
-// #include<stdio.h>
-// int	main(void)
-// {
-// 	printf("%ld\n",ft_strlen(""));
-// 	printf("%ld\n",ft_strlen("12345"));
-// }

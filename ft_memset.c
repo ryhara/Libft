@@ -24,15 +24,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char	s1[] = "abcde";
-// 	char	s2[] = "abcde";
-// 	memset(s1,-50,2);
-// 	printf("%s\n",s1);
-// 	ft_memset(s2,-50,2);
-// 	printf("%s\n",s2);
-// }

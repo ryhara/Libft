@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:42:10 by ryhara            #+#    #+#             */
-/*   Updated: 2023/06/11 09:48:16 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:44:38 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,28 +84,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (array);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	char *str;
-// 	char c;
-// 	char **ans;
-// 	int i;
-// 	int count;
-
-// 	str = "-hello-world--japan---42-42Tokyo";
-// 	// str = "babaaaaaaaaaaaaaaaa";
-// 	c = '-';
-// 	i = 0;
-// 	count = (word_count(str, c) + 1);
-// 	printf("count : %d\n", count);
-// 	// ans = ft_split(str, c);
-// 	ans = ft_split(",,,hello,,,world,,,42,,,tokyo,,,,", ',');
-// 	printf("%s\n",str);
-// 	while (i < count)
-// 	{
-// 		printf("%d: %s\n", i, ans[i]);
-// 		i++;
-// 	}
-// }

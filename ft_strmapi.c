@@ -33,20 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ans[i] = '\0';
 	return (ans);
 }
-
-// char test(unsigned int i, char c)
-// {
-// 	c++;
-// 	return (c);
-// }
-
-// // #include<stdio.h>
-// int	main(void)
-// {
-// 	char s1[]="abcd";
-// 	char *s2;
-// 	printf("%s\n",s1);
-// 	s2 = ft_strmapi(s1, test);
-// 	printf("%s\n",s2);
-// 	free(s2);
-// }

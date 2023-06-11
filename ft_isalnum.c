@@ -19,11 +19,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n",ft_isalnum('a'));
-// 	printf("%d\n",ft_isalnum('0'));
-// 	printf("%d\n",ft_isalnum('-'));
-// }

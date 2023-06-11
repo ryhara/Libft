@@ -29,13 +29,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-// #include<stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char *s1 = "abcdeab";
-// 	printf("%p\n", strchr(s1,'\0'));
-// 	printf("%p\n", ft_strchr(s1,'\0'));
-// 	printf("%p\n", s1+1);
-// }

@@ -36,38 +36,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (dest);
 	}
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int main(void)
-// {
-// 	char str[] = "abcdefghijklmnopqrstu";
-// 	printf("移動前：%s\n",str);
-// 	memmove(str+8, str, 10);        /* 重複エリアのコピー */
-// 	printf("移動後：%s\n",str);
-
-// 	char str2[] = "abcdefghijklmnopqrstu";
-// 	printf("移動前：%s\n",str2);
-// 	memmove(str2+8, str, 10);        /* 重複エリアのコピー */
-// 	printf("移動後：%s\n",str2);
-
-// 	char buff[10];
-// 	int	i1;
-
-// 	for (i1 = 0; i1 < 10; i1++)
-//     {
-//         buff[i1] = i1;
-//     }
-//  	for (i1 = 0; i1 < 10; i1++)
-//     {
-//         printf("[%d]", buff[i1]);
-//     }
-//     printf("\n");
-//     ft_memmove(buff + 1, buff, 9);
-// 	for (i1 = 0; i1 < 10; i1++)
-//     {
-//         printf("[%d]", buff[i1]);
-//     }
-// 	return 0;
-// }

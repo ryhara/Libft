@@ -19,11 +19,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n",ft_isascii('a'));
-// 	printf("%d\n",ft_isascii('\n'));
-// 	printf("%d\n",ft_isascii(128));
-// }

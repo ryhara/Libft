@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 14:49:59 by ryhara            #+#    #+#             */
-/*   Updated: 2023/06/05 22:47:19 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:45:45 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(subs, s + start, tmp_len + 1);
 	return (subs);
 }
-
-// #include<stdio.h>
-// int	main(void)
-// {
-// 	char	*s1;
-// 	s1 = ft_substr("libft-test-tokyo", 0 ,2);
-// 	if (s1 == NULL)
-// 		printf("null\n");
-// 	else
-// 		printf("%s\n",s1);
-// }

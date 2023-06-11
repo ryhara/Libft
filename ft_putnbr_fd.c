@@ -25,17 +25,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd((n % 10 + '0'), fd);
 }
-
-// #include<stdio.h>
-// int	main(void)
-// {
-// 	int	fd;
-
-// 	fd = 1;
-// 	ft_putnbr_fd(INT_MAX,1);
-// 	ft_putchar_fd('\n',1);
-// 	ft_putnbr_fd(INT_MIN,1);
-// 	ft_putchar_fd('\n',1);
-// 	ft_putnbr_fd(-10,1);
-// 	ft_putchar_fd('\n',1);
-// }

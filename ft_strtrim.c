@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 15:03:13 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/28 14:55:40 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:45:38 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(ans, &s1[i], (tail - i + 1));
 	return (ans);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%s\n",ft_strtrim("",""));
-// }

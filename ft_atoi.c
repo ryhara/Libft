@@ -62,15 +62,3 @@ int	ft_atoi(const char *nptr)
 {
 	return ((int)ft_strtol(nptr));
 }
-
-// #include <stdlib.h>
-// #include <stdio.h>
-// int main(void)
-// {
-// 	//LONG_MAX 9223372036854775807
-// 	printf("%d\n",atoi(" \n 	 -9223372036854775807."));
-// 	printf("%d\n",atoi("-2147483648"));
-// 	printf("ft_atoi\n");
-// 	printf("%d\n",ft_atoi("  \n	 -9223372036854775807."));
-// 	printf("%d\n",ft_atoi("-2147483648"));
-// }

@@ -26,19 +26,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	}
 	return ;
 }
-
-// void test(unsigned int i, char *c)
-// {
-// 	(*c)++;
-// 	return ;
-// }
-
-// #include<stdio.h>
-// int	main(void)
-// {
-// 	char s1[]="abcd";
-// 	char *s2;
-// 	printf("%s\n",s1);
-// 	ft_striteri(s1, test);
-// 	printf("%s\n",s1);
-// }

@@ -20,14 +20,3 @@ t_list	*ft_lstlast(t_list *lst)
 		lst = lst -> next;
 	return (lst);
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	t_list *lst = ft_lstnew("0");
-// 	ft_lstadd_front(&lst, ft_lstnew("1"));
-// 	ft_lstadd_front(&lst, ft_lstnew("2"));
-// 	t_list	*lst2 = ft_lstlast(lst);
-// 	printf("%s\n",(char *)lst2->content);
-// }

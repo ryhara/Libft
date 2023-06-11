@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:30:54 by ryhara            #+#    #+#             */
-/*   Updated: 2023/06/11 13:46:09 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:43:23 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,3 @@ char	*ft_itoa(int n)
 		str[0] = '-';
 	return (str);
 }
-
-// #include<stdio.h>
-// int main(void)
-// {
-// 	char *s;
-// 	s = ft_itoa(-1);
-// 	printf("%s\n",s);
-// }

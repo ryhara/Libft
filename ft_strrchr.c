@@ -31,13 +31,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (ans);
 }
-
-// #include<stdio.h>
-// #include <string.h>
-// int main(void)
-// {
-// 	char *s1 = "abcdeab";
-// 	printf("%p\n", strrchr(s1,'b'));
-// 	printf("%p\n", ft_strrchr(s1,'b'));
-// 	printf("%p\n", s1+6);
-// }

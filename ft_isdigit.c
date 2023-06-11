@@ -19,10 +19,3 @@ int	ft_isdigit(int c)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-// int	main(void)
-// {
-// 	printf("%d\n",ft_isdigit('a'));
-// 	printf("%d\n",ft_isdigit('0'));
-// }

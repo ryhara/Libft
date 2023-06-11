@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:39:40 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/21 09:58:22 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:43:58 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-// int	main(void)
-// {
-// 	printf("%d\n",memcmp("abc","ab",2));
-// 	printf("%d\n",ft_memcmp("abc","ab",2));
-// }

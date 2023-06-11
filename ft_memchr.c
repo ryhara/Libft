@@ -6,7 +6,7 @@
 /*   By: ryhara <ryhara@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 09:21:37 by ryhara            #+#    #+#             */
-/*   Updated: 2023/05/21 13:38:44 by ryhara           ###   ########.fr       */
+/*   Updated: 2023/06/11 18:43:52 by ryhara           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// #include <string.h>
-// #include <stdio.h>
-// int main(void)
-// {
-// 	printf("%s\n", memchr("abcde",'c',4));
-// 	printf("%s\n", ft_memchr("abcde",'c',4));
-// }

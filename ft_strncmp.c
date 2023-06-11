@@ -31,12 +31,3 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
-
-// #include<string.h>
-// #include<stdio.h>
-// int	main(void)
-// {
-// 	// printf("%d\n",strncmp("aaaaa",0,100));
-// 	//printf("%d\n",ft_strncmp("aaaaa",0,100));
-
-// }
